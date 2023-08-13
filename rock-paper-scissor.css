@@ -2,7 +2,7 @@ body {
 text-align: center;
 display: flex;
 flex-wrap: wrap;
-background-color: blue;
+background-color: rgb(128, 128, 190);
 }
 
 img {
