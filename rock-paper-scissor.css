@@ -5,3 +5,6 @@ flex-wrap: wrap;
 background-color: blue;
 }
 
+img {
+    width: 80px;
+}
