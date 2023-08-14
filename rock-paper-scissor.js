@@ -75,12 +75,6 @@ function resultOfTheGame () {
 
 resultOfTheGame()
 optionDisplayFromComputer.removeAttribute('class')
-optionDisplayFromComputer.removeAttribute('class')
-optionDisplayFromComputer.removeAttribute('class')
-optionDisplayFromComputer.removeAttribute('class')
-optionDisplayFromComputer.removeAttribute('class')
-optionDisplayFromComputer.removeAttribute('class')
-optionDisplayFromComputer.removeAttribute('class')
 console.log(optionDisplayFromComputer.removeAttribute('class'))
 }
 
