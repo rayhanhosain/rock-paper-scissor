@@ -50,13 +50,15 @@ function resultOfTheGame () {
     
     let result
     if (userChoice === optionDisplayFromComputer.getAttribute('class')) {
-        result = "It's a draw"
+        result = "It's a Draw"
     }
     else if (userChoice === "rock" && optionDisplayFromComputer.getAttribute('class') === "paper") {
+        
         result = 'You Lost'
+        
     }
     else if (userChoice === "rock" && optionDisplayFromComputer.getAttribute('class') === "scissor") {
-        result = 'You won'
+        result = 'You Won'
     }
     else if (userChoice === "paper" && optionDisplayFromComputer.getAttribute('class') === "rock") {
         result = 'You Won'
@@ -68,9 +70,21 @@ function resultOfTheGame () {
         result = 'You Lost'
     }
     else if (userChoice === "scissor" && optionDisplayFromComputer.getAttribute('class') === "paper") {
-        result = 'You won'
+        result = 'You Won'
     }
     resultDisplay.innerHTML = result
+    if (resultDisplay.innerHTML === "You Won") {
+        resultDisplay.setAttribute("style", "color: green;")
+        alert(result)
+    }
+    else if (resultDisplay.innerHTML === "You Lost") {
+        resultDisplay.setAttribute("style", "color: red;")
+        alert(result)
+    }
+    else {
+        resultDisplay.setAttribute("style", "color: grey;")
+        alert(result)
+    }
 }
 
 resultOfTheGame()
