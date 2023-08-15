@@ -81,8 +81,8 @@ function resultOfTheGame () {
         resultDisplay.setAttribute("style", "color: red;")
         alert(result)
     }
-    else {
-        resultDisplay.setAttribute("style", "color: grey;")
+    else if (resultDisplay.innerHTML === "It's a Draw"){ 
+        resultDisplay.setAttribute("style", "color: white;")
         alert(result)
     }
 }
