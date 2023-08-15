@@ -75,15 +75,21 @@ function resultOfTheGame () {
     resultDisplay.innerHTML = result
     if (resultDisplay.innerHTML === "You Won") {
         resultDisplay.setAttribute("style", "color: green;")
-        alert(result)
+        setTimeout(() => {
+            alert(result)
+        }, 500);
     }
     else if (resultDisplay.innerHTML === "You Lost") {
         resultDisplay.setAttribute("style", "color: red;")
-        alert(result)
+        setTimeout(() => {
+            alert(result)
+        }, 500);
     }
     else if (resultDisplay.innerHTML === "It's a Draw"){ 
         resultDisplay.setAttribute("style", "color: white;")
-        alert(result)
+        setTimeout(() => {
+            alert(result)
+        }, 500);
     }
 }
 
