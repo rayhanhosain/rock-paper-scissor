@@ -1,66 +1,73 @@
 body {
     background-color: rgb(127, 127, 127);
+    text-align: center;
 }
 #container {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     grid-template-rows: 1fr 2fr 1fr 1fr;
+    max-height: 100%;
     
 }
 
 #you {
     grid-row: 1;
     grid-column: 1;
-    text-align: center;
 }
 #vs {
     grid-row: 1;
     grid-column: 2;
-    text-align: center;
 }
 #computer {
     grid-row: 1;
     grid-column: 3;
-    text-align: center;
-    margin-left: 1fr;
 }
 
 #user-choice-display {
     grid-row: 2;
     grid-column: 1;
-    justify-self: center;
 }
 
 #user-choice-display img {
-    width: 80%;
+    height: 100%;
+    max-height: 200px;
 }
 
 
 #option-display-from-computer {
     grid-row: 2;
     grid-column: 3;
-    text-align: center;
-    background-color: rgb(127, 0, 247);
     border-radius: 10px;
 }
 #option-display-from-computer img {
-    width: 80%;
+    height: 100%;
+    max-height: 200px;
 }
 
 #result {
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 2;
-    text-align: center;
 
 }
 
-#images-to-click {
+#h2-bottom {
+    grid-column: 1;
     grid-row: 4;
-    grid-column: 1/ span 3;
-    justify-self: center;
+    vertical-align: middle;
+}
+
+#bottom {
+    display: flex;
+    grid-row: 4;
+    grid-column: 2 / 3;
+}
+
+#bottom img{
+    max-height: 100px;
+    margin-left: 20px;
+
 }
 
 img {
-    width: 80px;
     border-radius: 50%;
 }

@@ -10,21 +10,21 @@ let userChoice
 
 
 rockImage.addEventListener("click", () => {
-    userChoiceDisplay.innerHTML = '<img src="./image/rock.jpg" alt="rock">'
+    userChoiceDisplay.innerHTML = '<img src="./image/rock-user.jpg" alt="rock">'
     userChoice = 'rock'
     optionFromComputer()
     
 })
 
 paperImage.addEventListener("click", () => {
-    userChoiceDisplay.innerHTML = '<img src="./image/paper.png" alt="paper">'
+    userChoiceDisplay.innerHTML = '<img src="./image/paper-user.jpg" alt="paper">'
     userChoice = 'paper'
     optionFromComputer()
     
 })
 
 scissorImage.addEventListener("click", () => {
-    userChoiceDisplay.innerHTML = '<img src="./image/scissor.jpg" alt="scissor">'
+    userChoiceDisplay.innerHTML = '<img src="./image/scissor-user.jpg" alt="scissor">'
     userChoice = 'scissor'
     optionFromComputer()
 })
@@ -34,15 +34,15 @@ function optionFromComputer () {
     let oneToThree = Math.floor(Math.random() * options.length) + 1
 
     if (oneToThree === 1) {
-        optionDisplayFromComputer.innerHTML = '<img src="./image/rock.jpg" alt="rock">'
+        optionDisplayFromComputer.innerHTML = '<img src="./image/rock-computer.jpg" alt="rock">'
         optionDisplayFromComputer.classList.add('rock')
     }
     else if (oneToThree === 2) {
-        optionDisplayFromComputer.innerHTML = '<img src="./image/paper.png" alt="rock">'
+        optionDisplayFromComputer.innerHTML = '<img src="./image/paper-computer.jpg" alt="rock">'
         optionDisplayFromComputer.classList.add('paper')
     }
     else if (oneToThree === 3) {
-        optionDisplayFromComputer.innerHTML = '<img src="./image/scissor.jpg" alt="rock">'
+        optionDisplayFromComputer.innerHTML = '<img src="./image/scissor-computer.jpg" alt="rock">'
         optionDisplayFromComputer.classList.add('scissor')
     }
 console.log(optionDisplayFromComputer.getAttribute('class'))
