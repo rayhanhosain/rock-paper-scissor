@@ -65,7 +65,7 @@ rockImage.addEventListener("click", () => {
     userChoiceDisplay.appendChild(userRockImg);
     userChoice = "rock";
     optionFromComputer();
-  }, 1000);
+  }, 500);
 });
 
 paperImage.addEventListener("click", () => {
@@ -76,7 +76,7 @@ paperImage.addEventListener("click", () => {
     userChoiceDisplay.appendChild(userPaperImg);
     userChoice = "paper";
     optionFromComputer();
-  }, 1000);
+  }, 500);
 });
 
 scissorImage.addEventListener("click", () => {
@@ -88,7 +88,7 @@ scissorImage.addEventListener("click", () => {
     userChoiceDisplay.appendChild(userScissorImg);
     userChoice = "scissor";
     optionFromComputer();
-  }, 1000);
+  }, 500);
 });
 
 //optionFromComputer function
