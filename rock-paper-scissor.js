@@ -37,8 +37,8 @@ let countUserScore = 0;
 //gif
 const gifa = document.createElement("img");
 const gifb = document.createElement("img");
-gifa.src = "./gif/w.gif";
-gifb.src = "./gif/w.gif";
+gifa.src = "./g/wheel.gif";
+gifb.src = "./g/wheel.gif";
 //images to display after choosing option
 
 const userRockImg = document.createElement("img");
