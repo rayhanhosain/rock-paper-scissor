@@ -23,8 +23,8 @@ let scissorImage = document.querySelector("#scissor");
 let userChoice;
 
 //result text
-const winText = " have won!";
-const loseText = "You have lost";
+const winText = "User won!";
+const loseText = "User has lost";
 const drawText = "Drawn";
 
 //accessing to add score
