@@ -23,12 +23,12 @@ let scissorImage = document.querySelector("#scissor");
 let userChoice;
 
 //result text
-const winText = "You have won!";
+const winText = " have won!";
 const loseText = "You have lost";
 const drawText = "Drawn";
 
 //accessing to add score
-let scrU = document.querySelector("#scr-u");
+let scrUser = document.querySelector("#scr-user");
 let scrCom = document.querySelector("#scr-com");
 
 let countComputerScore = 0;
@@ -120,12 +120,14 @@ function optionFromComputer() {
       optionDisplayFromComputer.className === "paper"
     ) {
       result = loseText;
-    } else if (
+    }
+    if (
       userChoice === "rock" &&
       optionDisplayFromComputer.className === "scissor"
     ) {
       result = winText;
-    } else if (
+    }
+    if (
       userChoice === "paper" &&
       optionDisplayFromComputer.className === "rock"
     ) {
@@ -136,12 +138,14 @@ function optionFromComputer() {
       optionDisplayFromComputer.className === "scissor"
     ) {
       result = loseText;
-    } else if (
+    }
+    if (
       userChoice === "scissor" &&
       optionDisplayFromComputer.className === "rock"
     ) {
       result = loseText;
-    } else if (
+    }
+    if (
       userChoice === "scissor" &&
       optionDisplayFromComputer.className === "paper"
     ) {
@@ -159,7 +163,7 @@ function optionFromComputer() {
         container.classList.add("containerColorChangeForWin");
 
         countUserScore = countUserScore + 1;
-        scrU.innerText = countUserScore;
+        scrUser.innerText = countUserScore;
       } else if (result === loseText) {
         resultDisplay.classList.add("lose");
         container.classList.add("containerColorChangeForLose");
