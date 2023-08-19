@@ -35,9 +35,10 @@ let countComputerScore = 0;
 let countUserScore = 0;
 
 //gif
-const hand = document.createElement("img");
-hand.src = "./gif/hand.gif";
-
+const gifa = document.createElement("img");
+const gifb = document.createElement("img");
+gifa.src = "./gif/w.gif";
+gifb.src = "./gif/w.gif";
 //images to display after choosing option
 
 const userRockImg = document.createElement("img");
@@ -56,24 +57,38 @@ computerScissorImg.src = "./image/scissor-computer.jpg";
 
 //clicking on the bottom images
 rockImage.addEventListener("click", () => {
-  userChoiceDisplay.replaceChildren();
-  userChoiceDisplay.appendChild(userRockImg);
-  userChoice = "rock";
-  optionFromComputer();
+  userChoiceDisplay.replaceChildren(gifa);
+  optionDisplayFromComputer.replaceChildren(gifb);
+
+  setTimeout(() => {
+    userChoiceDisplay.replaceChildren();
+    userChoiceDisplay.appendChild(userRockImg);
+    userChoice = "rock";
+    optionFromComputer();
+  }, 1000);
 });
 
 paperImage.addEventListener("click", () => {
-  userChoiceDisplay.replaceChildren();
-  userChoiceDisplay.appendChild(userPaperImg);
-  userChoice = "paper";
-  optionFromComputer();
+  userChoiceDisplay.replaceChildren(gifa);
+  optionDisplayFromComputer.replaceChildren(gifb);
+  setTimeout(() => {
+    userChoiceDisplay.replaceChildren();
+    userChoiceDisplay.appendChild(userPaperImg);
+    userChoice = "paper";
+    optionFromComputer();
+  }, 1000);
 });
 
 scissorImage.addEventListener("click", () => {
-  userChoiceDisplay.replaceChildren();
-  userChoiceDisplay.appendChild(userScissorImg);
-  userChoice = "scissor";
-  optionFromComputer();
+  userChoiceDisplay.replaceChildren(gifa);
+  optionDisplayFromComputer.replaceChildren(gifb);
+
+  setTimeout(() => {
+    userChoiceDisplay.replaceChildren();
+    userChoiceDisplay.appendChild(userScissorImg);
+    userChoice = "scissor";
+    optionFromComputer();
+  }, 1000);
 });
 
 //optionFromComputer function
