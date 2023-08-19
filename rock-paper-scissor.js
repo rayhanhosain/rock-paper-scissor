@@ -5,6 +5,7 @@ let optionDisplayFromComputer = document.querySelector(
   "#option-display-from-computer"
 );
 
+//accessing container
 let cntnr = document.querySelector("#container");
 
 //result display section access by id
@@ -26,16 +27,18 @@ const winText = "You have won!";
 const loseText = "You have lost";
 const drawText = "Drawn";
 
+//accessing to add score
 let scrU = document.querySelector("#scr-u");
 let scrCom = document.querySelector("#scr-com");
 
 let countComputerScore = 0;
 let countUserScore = 0;
 
-//images to display after choosing option
-
+//gif
 const hand = document.createElement("img");
 hand.src = "./gif/hand.gif";
+
+//images to display after choosing option
 
 const userRockImg = document.createElement("img");
 userRockImg.src = "./image/rock-user.jpg";
@@ -92,6 +95,7 @@ function optionFromComputer() {
       break;
   }
 
+  //display result
   function resultOfTheGame() {
     let result;
     if (userChoice === optionDisplayFromComputer.className) {
