@@ -1,101 +1,165 @@
-let userChoiceDisplay = document.querySelector('#user-choice-display')
-let optionDisplayFromComputer = document.querySelector('#option-display-from-computer')
-let resultDisplay = document.querySelector('#result-display')
-let options = document.querySelectorAll(".image-bottom")
+//option display section access by id
 
-let rockImage = document.querySelector('#rock')
-let paperImage = document.querySelector('#paper')
-let scissorImage = document.querySelector('#scissor')
-let userChoice
+let userChoiceDisplay = document.querySelector("#user-choice-display");
+let optionDisplayFromComputer = document.querySelector(
+  "#option-display-from-computer"
+);
 
+let cntnr = document.querySelector("#container");
 
+//result display section access by id
+let resultDisplay = document.querySelector("#result-display");
+
+//bottom images access by class
+let options = document.querySelectorAll(".image-bottom");
+
+//selecting bottom images with id
+let rockImage = document.querySelector("#rock");
+let paperImage = document.querySelector("#paper");
+let scissorImage = document.querySelector("#scissor");
+
+//declaring user choice
+let userChoice;
+
+//result text
+const winText = "You have won!";
+const loseText = "You have lost";
+const drawText = "Drawn";
+
+let scrU = document.querySelector("#scr-u");
+let scrCom = document.querySelector("#scr-com");
+
+let countComputerScore = 0;
+let countUserScore = 0;
+
+//images to display after choosing option
+
+const hand = document.createElement("img");
+hand.src = "./gif/hand.gif";
+
+const userRockImg = document.createElement("img");
+userRockImg.src = "./image/rock-user.jpg";
+const userPaperImg = document.createElement("img");
+userPaperImg.src = "./image/paper-user.jpg";
+const userScissorImg = document.createElement("img");
+userScissorImg.src = "./image/scissor-user.jpg";
+
+const computerRockImg = document.createElement("img");
+computerRockImg.src = "./image/rock-computer.jpg";
+const computerPaperImg = document.createElement("img");
+computerPaperImg.src = "./image/paper-computer.jpg";
+const computerScissorImg = document.createElement("img");
+computerScissorImg.src = "./image/scissor-computer.jpg";
+
+//clicking on the bottom images
 rockImage.addEventListener("click", () => {
-    userChoiceDisplay.innerHTML = '<img src="./image/rock-user.jpg" alt="rock">'
-    userChoice = 'rock'
-    optionFromComputer()
-    
-})
+  userChoiceDisplay.replaceChildren();
+  userChoiceDisplay.appendChild(userRockImg);
+  userChoice = "rock";
+  optionFromComputer();
+});
 
 paperImage.addEventListener("click", () => {
-    userChoiceDisplay.innerHTML = '<img src="./image/paper-user.jpg" alt="paper">'
-    userChoice = 'paper'
-    optionFromComputer()
-    
-})
+  userChoiceDisplay.replaceChildren();
+  userChoiceDisplay.appendChild(userPaperImg);
+  userChoice = "paper";
+  optionFromComputer();
+});
 
 scissorImage.addEventListener("click", () => {
-    userChoiceDisplay.innerHTML = '<img src="./image/scissor-user.jpg" alt="scissor">'
-    userChoice = 'scissor'
-    optionFromComputer()
-})
+  userChoiceDisplay.replaceChildren();
+  userChoiceDisplay.appendChild(userScissorImg);
+  userChoice = "scissor";
+  optionFromComputer();
+});
 
-function optionFromComputer () {
-    
-    let oneToThree = Math.floor(Math.random() * options.length) + 1
+//optionFromComputer function
+function optionFromComputer() {
+  let oneToThree = Math.floor(Math.random() * options.length) + 1;
+  optionDisplayFromComputer.replaceChildren();
+  switch (oneToThree) {
+    case 1:
+      optionDisplayFromComputer.appendChild(computerRockImg);
+      optionDisplayFromComputer.classList.add("rock");
+      break;
+    case 2:
+      optionDisplayFromComputer.appendChild(computerPaperImg);
+      optionDisplayFromComputer.classList.add("paper");
+      break;
+    case 3:
+      optionDisplayFromComputer.appendChild(computerScissorImg);
+      optionDisplayFromComputer.classList.add("scissor");
+      break;
+  }
 
-    if (oneToThree === 1) {
-        optionDisplayFromComputer.innerHTML = '<img src="./image/rock-computer.jpg" alt="rock">'
-        optionDisplayFromComputer.classList.add('rock')
+  function resultOfTheGame() {
+    let result;
+    if (userChoice === optionDisplayFromComputer.className) {
+      result = drawText;
+    } else if (
+      userChoice === "rock" &&
+      optionDisplayFromComputer.className === "paper"
+    ) {
+      result = loseText;
+    } else if (
+      userChoice === "rock" &&
+      optionDisplayFromComputer.className === "scissor"
+    ) {
+      result = winText;
+    } else if (
+      userChoice === "paper" &&
+      optionDisplayFromComputer.className === "rock"
+    ) {
+      result = winText;
     }
-    else if (oneToThree === 2) {
-        optionDisplayFromComputer.innerHTML = '<img src="./image/paper-computer.jpg" alt="rock">'
-        optionDisplayFromComputer.classList.add('paper')
+    if (
+      userChoice === "paper" &&
+      optionDisplayFromComputer.className === "scissor"
+    ) {
+      result = loseText;
+    } else if (
+      userChoice === "scissor" &&
+      optionDisplayFromComputer.className === "rock"
+    ) {
+      result = loseText;
+    } else if (
+      userChoice === "scissor" &&
+      optionDisplayFromComputer.className === "paper"
+    ) {
+      result = winText;
     }
-    else if (oneToThree === 3) {
-        optionDisplayFromComputer.innerHTML = '<img src="./image/scissor-computer.jpg" alt="rock">'
-        optionDisplayFromComputer.classList.add('scissor')
+    let resultToDisplay = document.createTextNode(result);
+    resultDisplay.replaceChildren();
+    resultDisplay.appendChild(resultToDisplay);
+
+    function colorChange() {
+      resultDisplay.className = "";
+      cntnr.className = "";
+      if (result === winText) {
+        resultDisplay.classList.add("win");
+        container.classList.add("containerColorChangeForWin");
+
+        countUserScore = countUserScore + 1;
+        scrU.innerText = countUserScore;
+      } else if (result === loseText) {
+        resultDisplay.classList.add("lose");
+        container.classList.add("containerColorChangeForLose");
+
+        countComputerScore = countComputerScore + 1;
+        scrCom.innerText = countComputerScore;
+        console.log(countComputerScore);
+      } else {
+        resultDisplay.classList.add("draw");
+        container.classList.add("containerColorChangeForDraw");
+      }
     }
-console.log(optionDisplayFromComputer.getAttribute('class'))
-function resultOfTheGame () {
-    
-    let result
-    if (userChoice === optionDisplayFromComputer.getAttribute('class')) {
-        result = "It's a Draw"
-    }
-    else if (userChoice === "rock" && optionDisplayFromComputer.getAttribute('class') === "paper") {
-        
-        result = 'You Lost'
-        
-    }
-    else if (userChoice === "rock" && optionDisplayFromComputer.getAttribute('class') === "scissor") {
-        result = 'You Won'
-    }
-    else if (userChoice === "paper" && optionDisplayFromComputer.getAttribute('class') === "rock") {
-        result = 'You Won'
-    }
-    if (userChoice === "paper" && optionDisplayFromComputer.getAttribute('class') === "scissor") {
-        result = 'You Lost'
-    }
-    else if (userChoice === "scissor" && optionDisplayFromComputer.getAttribute('class') === "rock") {
-        result = 'You Lost'
-    }
-    else if (userChoice === "scissor" && optionDisplayFromComputer.getAttribute('class') === "paper") {
-        result = 'You Won'
-    }
-    resultDisplay.innerHTML = result
-    if (resultDisplay.innerHTML === "You Won") {
-        resultDisplay.setAttribute("style", "color: green;")
-        setTimeout(() => {
-            alert(result)
-        }, 500);
-    }
-    else if (resultDisplay.innerHTML === "You Lost") {
-        resultDisplay.setAttribute("style", "color: red;")
-        setTimeout(() => {
-            alert(result)
-        }, 500);
-    }
-    else if (resultDisplay.innerHTML === "It's a Draw"){ 
-        resultDisplay.setAttribute("style", "color: white;")
-        setTimeout(() => {
-            alert(result)
-        }, 500);
-    }
+
+    colorChange();
+    setTimeout(() => {
+      alert(result);
+    }, 500);
+  }
+
+  resultOfTheGame();
+  optionDisplayFromComputer.className = "";
 }
-
-resultOfTheGame()
-optionDisplayFromComputer.removeAttribute('class')
-console.log(optionDisplayFromComputer.removeAttribute('class'))
-}
-
-

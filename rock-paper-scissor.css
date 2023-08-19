@@ -1,12 +1,15 @@
 body {
-    background-color: rgb(127, 127, 127);
+    background-color: rgb(179, 179, 179);
     text-align: center;
+    display: inline-block;
+    margin: 0;
+
 }
 #container {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     grid-template-rows: 1fr 2fr 1fr 1fr;
-    max-height: 100%;
+    max-width: 100%;
     
 }
 
@@ -35,6 +38,7 @@ body {
 #user-choice-display img {
     height: 100%;
     max-height: 200px;
+    min-height: 10px;
     margin-left: 30%;
 }
 
@@ -47,6 +51,7 @@ body {
 #option-display-from-computer img {
     height: 100%;
     max-height: 200px;
+    min-height: 10px;
     margin-right: 30%;
 }
 
@@ -70,6 +75,7 @@ body {
 
 #bottom img{
     max-height: 100px;
+    min-height: 10px;
     margin-left: 20px;
 
 }
@@ -77,3 +83,27 @@ body {
 img {
     border-radius: 50%;
 }
+
+.win {
+    color: rgb(25, 137, 10);
+}
+.lose {
+    color: rgb(200, 27, 27);
+}
+.draw {
+    color: rgb(255, 255, 255);
+}
+
+.containerColorChangeForWin {
+    background-color: rgb(171, 238, 181);
+}
+
+.containerColorChangeForDraw {
+    background-color: rgb(143, 143, 143);
+}
+
+.containerColorChangeForLose {
+    background-color: rgb(240, 183, 173);
+}
+
+
